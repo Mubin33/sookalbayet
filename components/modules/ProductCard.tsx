@@ -16,9 +16,10 @@ import NextImage from "next/image"
 export interface ProductCardProps {
   product: Product
   className?: string
+  index?: number
 }
 
-export function ProductCard({ product, className }: ProductCardProps) {
+export function ProductCard({ product, className, index = 0 }: ProductCardProps) {
   const addItem = useCartStore((state) => state.addItem)
 
   const handleAddToCart = (e: React.MouseEvent) => {
@@ -28,7 +29,10 @@ export function ProductCard({ product, className }: ProductCardProps) {
   }
 
   return (
-    <Card className={cn("group overflow-hidden flex flex-col transition-all hover:shadow-md", className)}>
+    <Card 
+      className={cn("group overflow-hidden flex flex-col transition-all duration-300 hover:shadow-xl hover:-translate-y-1 opacity-0 animate-fade-up", className)}
+      style={{ animationDelay: `${index * 100}ms` }}
+    >
       <Link href={`/products/${product.id}`} className="relative aspect-[4/5] overflow-hidden bg-gray-100">
         <NextImage
           src={product.images[0]}
@@ -46,24 +50,24 @@ export function ProductCard({ product, className }: ProductCardProps) {
           )}
         </div>
       </Link>
-      <CardContent className="p-4 flex flex-col flex-1">
+      <CardContent className="p-3 sm:p-4 flex flex-col flex-1">
         <Link href={`/products/${product.id}`} className="hover:underline">
-          <h3 className="font-heading font-medium text-foreground line-clamp-1">{product.name}</h3>
+          <h3 className="font-heading font-medium text-sm sm:text-base text-foreground line-clamp-2 sm:line-clamp-1 leading-tight sm:leading-normal">{product.name}</h3>
         </Link>
         <div className="mt-1">
           <Rating rating={product.rating} size={14} />
         </div>
-        <div className="mt-auto flex items-end justify-between pt-4">
+        <div className="mt-auto flex items-end justify-between pt-3 sm:pt-4">
           <div className="flex flex-col">
-            <span className="text-lg font-bold text-primary-600">৳{product.price.toLocaleString("en-IN")}</span>
+            <span className="text-base sm:text-lg font-bold text-primary-600">৳{product.price.toLocaleString("en-IN")}</span>
             {product.originalPrice && (
-              <span className="text-xs text-gray-500 line-through">৳{product.originalPrice.toLocaleString("en-IN")}</span>
+              <span className="text-[10px] sm:text-xs text-gray-500 line-through">৳{product.originalPrice.toLocaleString("en-IN")}</span>
             )}
           </div>
           <Button 
             size="icon" 
             variant="secondary" 
-            className="h-9 w-9 rounded-full shadow-sm hover:shadow-md relative z-10"
+            className="h-8 w-8 sm:h-9 sm:w-9 rounded-full shadow-sm hover:shadow-md relative z-10"
             onClick={handleAddToCart}
           >
             <ShoppingCart className="h-4 w-4" />

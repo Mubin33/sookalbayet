@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/Button"
 import { ProductCard } from "@/components/modules/ProductCard"
 import { CategoryCard } from "@/components/modules/CategoryCard"
 import { ProductSkeleton } from "@/components/ui/ProductSkeleton"
+import { InstallPWA } from "@/components/ui/InstallPWA"
 import { Product, Category } from "@/types"
 
 export default function Home() {
@@ -120,6 +121,7 @@ export default function Home() {
       </section>
 
       <Container className="space-y-16">
+        <InstallPWA />
         {/* Category Cards */}
         <section>
           <div className="flex items-center justify-between mb-8">
@@ -147,8 +149,8 @@ export default function Home() {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {isLoadingFeatured
               ? Array.from({ length: 4 }).map((_, i) => <ProductSkeleton key={i} />)
-              : featuredProducts.map((product) => (
-                  <ProductCard key={product.id} product={product} />
+              : featuredProducts.map((product, index) => (
+                  <ProductCard key={product.id} product={product} index={index} />
                 ))}
           </div>
         </section>
@@ -191,8 +193,8 @@ export default function Home() {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {isLoadingNew
               ? Array.from({ length: 4 }).map((_, i) => <ProductSkeleton key={i} />)
-              : newProducts.map((product) => (
-                  <ProductCard key={product.id} product={product} />
+              : newProducts.map((product, index) => (
+                  <ProductCard key={product.id} product={product} index={index} />
                 ))}
           </div>
         </section>

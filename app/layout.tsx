@@ -3,6 +3,7 @@ import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layouts/Header";
 import { Footer } from "@/components/layouts/Footer";
+import { PWARegister } from "@/components/ui/PWARegister";
 
 import { Toaster } from "react-hot-toast";
 
@@ -31,6 +32,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${outfit.variable} antialiased min-h-screen flex flex-col`}
       >
+        <PWARegister />
         <Header />
         <main className="flex-1">
           {children}
