@@ -1,0 +1,58 @@
+[
+  {
+    "id": "ord_123456",
+    "userId": "u1",
+    "items": [
+      {
+        "productId": "p1",
+        "quantity": 1,
+        "price": 299.99
+      }
+    ],
+    "total": 299.99,
+    "status": "delivered",
+    "createdAt": "2023-10-01T10:00:00Z"
+  },
+  {
+    "id": "ord_789012",
+    "userId": "u1",
+    "items": [
+      {
+        "productId": "p3",
+        "quantity": 2,
+        "price": 24.99
+      },
+      {
+        "productId": "p4",
+        "quantity": 1,
+        "price": 14.5
+      }
+    ],
+    "total": 64.48,
+    "status": "processing",
+    "createdAt": "2023-10-25T14:30:00Z"
+  },
+  {
+    "id": "ord_jpecytt_1785993437533",
+    "userId": "guest",
+    "items": [
+      {
+        "productId": "p22",
+        "quantity": 3,
+        "price": 2600
+      }
+    ],
+    "total": 7800,
+    "status": "pending",
+    "shippingAddress": {
+      "line1": "796 Fabien Freeway",
+      "city": "Est voluptatem in ",
+      "state": "Qui debitis est expl",
+      "pincode": "Dolores occaecat non",
+      "country": "In ullamco repudiand"
+    },
+    "paymentMethod": "COD",
+    "shippingMethod": "STANDARD",
+    "createdAt": "2026-08-06T05:17:17.533Z"
+  }
+]

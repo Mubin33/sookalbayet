@@ -1,0 +1,23 @@
+[
+  {
+    "id": "c1",
+    "name": "Electronics",
+    "slug": "electronics",
+    "description": "Latest gadgets and tech accessories",
+    "image": "/images/categories/electronics.jpg"
+  },
+  {
+    "id": "c2",
+    "name": "Clothing",
+    "slug": "clothing",
+    "description": "Apparel for men and women",
+    "image": "/images/categories/clothing.jpg"
+  },
+  {
+    "id": "c3",
+    "name": "Home & Garden",
+    "slug": "home-and-garden",
+    "description": "Everything for your home and outdoor spaces",
+    "image": "/images/categories/home.jpg"
+  }
+]
